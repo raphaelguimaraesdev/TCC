@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-10 col-sm-10 mb-3">
+                <img class="img-fluid mx-auto d-block mt-2" width="150px" src="../../assets/logo.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-10 col-sm-10 mx-auto">
+                <div class="card rounded-0">
+                    <div class="card-header">
+                        <h6 class="mb-0">Acesso Restrito</h6>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" autocomplete="off" id="formLogin" [formGroup]="formularioAcesso" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <img clas="img-fluid px-2" src="../../assets/username.png" width="24px">
+                                <label class="text-dark" for="usuario">Usuário:</label>
+                                <input type="text" formControlName="usuario" class="form-control" [ngClass]="{ 'is-invalid': submetido && f.usuario.errors }" />
+                                <div *ngIf="submetido && f.usuario.errors" class="invalid-feedback">
+                                    <div *ngIf="f.usuario.errors.required">
+                                        O usuário não está correto.
+                                    </div>
+                                    <div *ngIf="f.usuario.errors.email">
+                                        Usário inválido. seunome@email.com.br.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <img clas="img-fluid" src="../../assets/password.png" width="27px">
+                                <label class="text-dark ml-2" for="senha">Senha:</label>
+                                <input type="password" class="form-control" id="senha">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-dark btn-sm float-right">Acessar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" row justify-content-center">
+            <div class="col-md-3 col-8 col-sm-8 ml-4">
+                <p class="font-weight-light small">Copyright© 2018. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js " integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em " crossorigin="anonymous "></script>
+</body>
+
+</html>
